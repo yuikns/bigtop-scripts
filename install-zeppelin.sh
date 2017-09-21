@@ -35,6 +35,7 @@ pushd /usr/local/
       echo 'export HADOOP_CONF_DIR=$HADOOP_CONF_DIR:/etc/hadoop/conf' >> conf/zeppelin-env.sh
       echo 'export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native' >> conf/zeppelin-env.sh
       echo 'export HADOOP_OPTS="$HADOOP_OPTS -Djava.library.path=$HADOOP_HOME/lib/native"' >> conf/zeppelin-env.sh
+      echo 'export HADOOP_CLASSPATH="$HADOOP_CLASSPATH:$(hadoop classpath)"' >> conf/zeppelin-env.sh
       echo 'export PIG_CLASSPATH=$PIG_CLASSPATH:$HADOOP_CONF_DIR' >> conf/zeppelin-env.sh
 
     popd # /usr/local/
