@@ -43,6 +43,8 @@ pushd /usr/local/
 
     (! id -u zeppelin > /dev/null 2>&1 ) && adduser zeppelin
     chown -R zeppelin:zeppelin zeppelin
+    sudo -u hdfs hdfs dfs -mkdir -p /user/zeppelin
+    sudo -u hdfs hdfs dfs -chown -R zeppelin:zeppelin /user/zeppelin
 
   fi
 
