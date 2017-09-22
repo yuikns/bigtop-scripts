@@ -46,12 +46,18 @@ pushd /usr/local/
     sudo -u hdfs hdfs dfs -mkdir -p /user/zeppelin
     sudo -u hdfs hdfs dfs -chown -R zeppelin:zeppelin /user/zeppelin
 
+    echo "Zeppelin is Ready Now!"
+    echo "Please use this command to start your service: "
+    echo "sudo -u zeppelin /usr/local/zeppelin/bin/zeppelin-daemon.sh start"
+    echo "Please use this command to stop your service: "
+    echo "sudo -u zeppelin /usr/local/zeppelin/bin/zeppelin-daemon.sh stop"
+
+  else
+
+    echo "DIR: /usr/local/zeppelin detected, stop the installing progress"
+    echo "This used to prevent this script executed twice"
+    echo "If this folder is installed by yourself, please erase it first"
+
   fi
 
 popd # /
-
-echo "Zeppelin is Ready Now!"
-echo "Please use this command to start your service: "
-echo "sudo -u zeppelin /usr/local/zeppelin/bin/zeppelin-daemon.sh start"
-echo "Please use this command to stop your service: "
-echo "sudo -u zeppelin /usr/local/zeppelin/bin/zeppelin-daemon.sh stop"
